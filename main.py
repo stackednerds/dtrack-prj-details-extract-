@@ -23,7 +23,7 @@ def fetch_all_projects():
     url = f"{DTRACK_BASE_URL}/v1/project"
     try:
         print(f"Requesting: {url}")
-        response = requests.get(url, headers=headers)
+        response = requests.get(url, headers=headers, verify=False)
         response.raise_for_status()
         return response.json()
     except requests.exceptions.RequestException as e:
